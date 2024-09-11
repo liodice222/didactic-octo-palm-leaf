@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>User Management Interface</h1>
+    <form id="addUserForm" action="/cgi-bin/user_management.sh" method="post">
+        <h2>Add User</h2>
+        <input type="hidden" name="action" value="add">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <button type="submit">Add User</button>
+    </form>
+
+    <form id="modifyUserForm" action="/cgi-bin/user_management.sh" method="post">
+        <h2>Modify User</h2>
+        <input type="hidden" name="action" value="modify">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="shell">New Shell:</label>
+        <input type="text" id="shell" name="shell" required>
+        <button type="submit">Modify User</button>
+    </form>
+
+    <form id="deleteUserForm" action="/cgi-bin/user_management.sh" method="post">
+        <h2>Delete User</h2>
+        <input type="hidden" name="action" value="delete">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <button type="submit">Delete User</button>
+    </form>
+</body>
+</html>
